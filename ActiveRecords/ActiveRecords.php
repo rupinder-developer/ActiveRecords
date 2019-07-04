@@ -53,24 +53,6 @@ class ActiveRecords
     /**
      * select() Function.
      *
-     * * Working :
-     * *
-     * * $array = array (
-     * *            'col_1' => 'val_1',
-     * *            'col_2' => 'val_2'
-     * *          );
-     * * 1. Code   : $obj->select('table_name');
-     * *    Output : SELECT * FROM table_name
-     * *
-     * * 2. Code   : $obj->select(['col_name_1,col_name_2','table_name']);
-     * *    Output : SELECT col_name_1,col_name_2 FROM table_name
-     * *
-     * * 3. Code   : $obj->select('table_name', $array);
-     * *    Output : SELECT * FROM table_name WHERE BINARY[Optional] col_1=val_1 AND BINARY col_2=val2
-     * *
-     * * 4. Code   : $obj->select('table_name', $array, 'OR');
-     * *    Output : SELECT * FROM table_name WHERE BINARY[Optional] col_1=val_1 OR BINARY col_2=val2
-     *
      * @param string $table
      * @param array  $condition
      * @param string $glue
@@ -105,29 +87,6 @@ class ActiveRecords
 
     /**
      * join() Function.
-     *
-     * * Working :
-     * *
-     * * $array = array (
-     * *            'col_1' => 'val_1',
-     * *            'col_2' => 'val_2'
-     * *          );
-     * * 1. Code   : $obj->join('table_1', 'table_2', 'table_1.col_name=table_2.col_name');
-     * *    Output : SELECT * FROM table_1 JOIN table_2 ON table_1.col_name=table_2.col_name;
-     * *
-     * * 2. Code   : $obj->join('table_1', ['table_2','INNER'], 'table_1.col_name=table_2.col_name');
-     * *    Output : SELECT * FROM table_1 INNER JOIN table_2 ON table_1.col_name=table_2.col_name;
-     * *
-     * * 3. Code   : $obj->join(['col_name_1,col_name_2','table_1'], 'table_2', 'table_1.col_name=table_2.col_name');
-     * *    Output : SELECT col_name_1,col_name_2 FROM table_1 JOIN table_2 ON table_1.col_name=table_2.col_name;
-     *
-     * * 4. Code   : $obj->join('table_1', 'table_2', 'table_1.col_name=table_2.col_name', $array);
-     * *    Output : SELECT * FROM table_1 JOIN table_2 ON table_1.col_name=table_2.col_name
-     * *             WHERE BINARY col_1=val_1 AND BINARY[Optional] col_2=val2;
-     *
-     * * 5. Code   : $obj->join('table_1', 'table_2', 'table_1.col_name=table_2.col_name', $array, 'OR');
-     * *    Output : SELECT * FROM table_1 JOIN table_2 ON table_1.col_name=table_2.col_name
-     * *             WHERE BINARY col_1=val_1 OR BINARY[Optional] col_2=val2;
      *
      * @param mixed  $select
      * @param mixed  $join
@@ -173,14 +132,6 @@ class ActiveRecords
     /**
      * insert() Function.
      *
-     * * Working :
-     * * $array = array (
-     * *            'col_1' => 'val_1',
-     * *            'col_2' => 'val_2'
-     * *          );
-     * * 1. Code   : $obj->insert('table_name', $array);
-     * *    Output : INSERT INTO table_name(col_1, val_1) VALUES('val_1', 'val_2')
-     *
      * @param string $table
      * @param array  $values
      *
@@ -205,21 +156,6 @@ class ActiveRecords
 
     /**
      * update() Function.
-     *
-     * * Working :
-     * * $array1 = array (
-     * *            'col_1' => 'val_1',
-     * *            'col_2' => 'val_2'
-     * *          );
-     * * $array2 = array (
-     * *            'col_name_1' => 'value_1',
-     * *            'col_name_2' => 'value_2',
-     * *          );
-     * * 1. Code   : $obj->update('table_name', $array1, $array2);
-     * *    Output : UPDATE table_name SET col_1=val_1, col_2=val_2 WHERE col_name_1=value_1 AND col_name_2=value_2
-     * *
-     * * 2. Code   : $obj->update('table_name', $array1, $array2, 'OR');
-     * *    Output : UPDATE table_name SET col_1=val_1, col_2=val_2 WHERE col_name_1=value_1 OR col_name_2=value_2
      *
      * @param string $table
      * @param array  $values
@@ -258,17 +194,6 @@ class ActiveRecords
 
     /**
      * delete() Function.
-     *
-     * * Working :
-     * * $array = array (
-     * *            'col_1' => 'val_1',
-     * *            'col_2' => 'val_2'
-     * *          );
-     * * 1. Code   : $obj->delete('table_name', $array);
-     * *    Output : DELETE FROM table_name WHERE col_1=val_1 AND col_2=val_2
-     * *
-     * * 2. Code   : $obj->delete('table_name', $array, 'OR');
-     * *    Output : DELETE FROM table_name WHERE col_1=val_1 OR col_2=val_2
      *
      * @param string $table
      * @param array  $condition
