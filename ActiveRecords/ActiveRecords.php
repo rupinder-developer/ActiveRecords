@@ -2,7 +2,7 @@
 /**
  * Active Records.
  * @author    Rupinder Singh <rupinder.developer@yahoo.in>
- * @copyright 2017
+ * @copyright 2019
  */
 namespace MySQL;
 
