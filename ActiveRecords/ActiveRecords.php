@@ -25,24 +25,15 @@ class ActiveRecords
     private $handler;
 
     /**
-     * Private Variables
-     * If this variable holds `BINARY` value in it, then all the queries are case-sensitive
-     *
-     * @var $binary
-     */
-    private $binary;
-
-    /**
      * This functions help to build the connection with Database.
      *
      * @return mixed
      */
-    public function __construct($_binary = '')
+    public function __construct()
     {
         try {
             $this->handler = new \PDO('mysql:host='.HOSTNAME.';dbname='.DB_NAME, USERNAME, PASSWORD);
             $this->handler->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-            $this->binary = strtoupper($_binary);
             return true;
         } catch (PDOException $e) {
             return $e->getMessage();
