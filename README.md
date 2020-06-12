@@ -58,6 +58,7 @@ You can initialize database connection by creating an object of this class.
 ```php
 require_once('path/ActiveRecords/ActiveRecords.php');
 $db = new MySQL\ActiveRecords();
+$db->connect();
 ```
 
 ## Active Records  
