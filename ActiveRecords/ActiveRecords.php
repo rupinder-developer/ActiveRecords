@@ -1,7 +1,7 @@
 <?php
 /**
  * Active Records.
- * @author    Rupinder Singh <rupinder.developer@yahoo.in>
+ * @author    Rupinder Singh <rupinder.developer@gmail.com>
  * @copyright 2020
  */
 namespace MySQL;
