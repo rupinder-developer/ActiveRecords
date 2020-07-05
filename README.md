@@ -1,7 +1,9 @@
-Active Records - v2
+Active Records - v2.1
 ===
 
 **What's New?**
+
+- Fix Bugs
 - Implemented Method Chaining
 - New Active Record's methods
     - *where(), nin(), in(), limit(), orderBy(), like(), notLike()*
