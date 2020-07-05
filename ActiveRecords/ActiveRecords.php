@@ -174,22 +174,19 @@ class ActiveRecords {
             if ($this->select) {
                 $query = $this->handler->prepare('SELECT '.$this->cols.' FROM '.$this->select.$where.$this->orderBy.$this->limit);
                 $query->execute($this->bindParams);
-                return $query;
             } else if ($this->update) {
                 $query = $this->handler->prepare("UPDATE {$this->update} SET ".implode(', ', $this->updateCols).$where);
                 $query->execute($this->bindParams);
-                return $query;
             } else if ($this->delete) {
                 $query = $this->handler->prepare("DELETE FROM {$this->delete}".$where);
                 $query->execute($this->bindParams);
-                return $query;
             } else {
-                return null;
+                $query = null;
             }          
         } else {
             die('Failed to initialize database connection, connect() method is missing.');
         }
-
+        
         // Cleaning up resources
         $this->bindParams = [];
         $this->updateCols = [];
@@ -200,6 +197,8 @@ class ActiveRecords {
         $this->limit      = '';
         $this->where      = [];
         $this->cols       = '*';  
+        
+        return $query;
     }//end execute()
 
     public function insert($tableName, $values) {
